@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <div class="gray-div"></div>
+    <main>
+        <h1>Grade Calculator</h1>
+        <form action="#" method="post">
+            <h4>Activities</h4>
+            <p>Give grades to the numeric activities:</p>
+            <table>
+                <!--Table headings-->
+                <tr>
+                    <th>Name</th>
+                    <th>Short Name</th>
+                    <th>Weight</th>
+                    <th>Grade</th>
+                    <th>Percent</th>
+                </tr>
+                <!--Activities-->
+                <tr>
+                    <td>Activity 1</td>
+                    <td>A1</td>
+                    <td>
+                        <input type="number" name="weight_a1" id="">
+                    </td>
+                    <!--TODO: Style so elems are in a row-->
+                    <td>
+                        <input type="number" name="num_a1">
+                        <p>/</p>
+                        <input type="number" name="denom_a1">
+                    </td>
+                    <td id="percent-a1"></td>
+                </tr>
+            </table>
+            <!--Add activity-->
+            <div class="red-btn" id="add-activity">
+                <input type="button" value="ADD ACTIVITY">
+            </div>
+            <!--Result-->
+            <div id=result>
+                <h4>Result</h4>
+            </div>
+            <!--Submit buttons-->
+            <div id="submit">
+                <input type="submit" value="WEIGHTED">
+                <input type="submit" value="MEAN">
+            </div>
+        </form>
+    </main>
+    <div class="gray-div"></div> 
+</body>
+</html>
