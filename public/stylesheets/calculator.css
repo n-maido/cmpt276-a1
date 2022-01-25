@@ -1,0 +1,52 @@
+:root {
+    --red-bg: #93262B;
+    --gray-div: #35322F;
+    --form-bg: #E6ECEF;
+    --table-header: #D8D8D8;
+    --red-hg: #A6192E;
+}
+
+body {
+    background-color: var(--red-bg);
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+main {
+    background-color: white;
+    width: 100em;
+    margin: 0;
+    box-shadow: #35322F;
+}
+
+.gray-div {
+    background-color: var(--gray-div);
+    height: 2em;
+    margin: 0;
+}
+
+.calculator {
+    padding: 2em;
+}
+
+h1 {
+    font-family: 'Lucida Grande', sans-serif, sans-serif;
+    font-weight: 500;
+}
+
+form {
+    background-color: var(--form-bg);
+    padding: 5px;
+}
+
+h4 {
+    color: var(--red-hg);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+}
+
+.red-btn {
+    background-color: var(--red-hg);
+    color: white;
+}
