@@ -3,6 +3,7 @@
     --gray-div: #35322F;
     --form-bg: #E6ECEF;
     --table-header: #D8D8D8;
+    --table-outline: #B3B3B3;
     --red-hg: #A6192E;
 }
 
@@ -11,11 +12,12 @@ body {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    padding: 0;
 }
 
 main {
     background-color: white;
-    width: 100em;
+    width: 80em;
     margin: 0;
     box-shadow: #35322F;
 }
@@ -27,17 +29,24 @@ main {
 }
 
 .calculator {
-    padding: 2em;
+    padding: 1em;
 }
 
 h1 {
     font-family: 'Lucida Grande', sans-serif, sans-serif;
     font-weight: 500;
+    font-size: 28pt;
+    margin-top: 2em;
+}
+
+#instructions {
+    margin-bottom: 2em;
 }
 
 form {
     background-color: var(--form-bg);
-    padding: 5px;
+    padding: 0.75em;
+    width: 60em;
 }
 
 h4 {
@@ -46,7 +55,71 @@ h4 {
     font-size: 24px;
 }
 
+table {
+    /* border: solid 1pt var(--table-outline); */
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--table-header);
+}
+
+td, th{
+    font-family: 'Times New Roman', Times, serif;
+    border: solid 1pt var(--table-outline);
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+    width: 10em;
+}
+
+
+input[type=number] {
+    height: 2.5em;
+    width: 3.5em;
+}
+
+.grade-input{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    border-width: 0 0 1pt 0;
+}
+
+
+.grade-slash {
+    font-size: 24px;
+    margin: 0;
+}
+
 .red-btn {
     background-color: var(--red-hg);
     color: white;
+    border: none;
+    border-radius: 5px;
+    height: 2.5em;
+    /* width: 8em; */
+    font-size: 12pt;
+    font-weight: 525;
+}
+
+input[value="ADD ACTIVITY"] {
+    width: 8em;
+    margin-top: 2em;
+}
+
+input[value="WEIGHTED"] {
+    width: 7em;
+    margin-right: 0.25em;
+}
+
+input[value="MEAN"] {
+    width: 6em;
+}
+
+#submit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
 }

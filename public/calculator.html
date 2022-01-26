@@ -15,7 +15,7 @@
             <h1>Grade Calculator</h1>
             <form action="#" method="post">
                 <h4>Activities</h4>
-                <p>Give grades to the numeric activities:</p>
+                <p id="instructions">Give grades to the numeric activities:</p>
                 <table>
                     <!--Table headings-->
                     <tr>
@@ -29,14 +29,56 @@
                     <tr>
                         <td>Activity 1</td>
                         <td>A1</td>
-                        <td>
+                        <td class="weight-input">
                             <input type="number" name="weight_a1" id="">
                         </td>
                         <!--TODO: Style so elems are in a row-->
-                        <td>
+                        <td class="grade-input">
                             <input type="number" name="num_a1">
-                            <p>/</p>
+                            <p class="grade-slash">/</p>
                             <input type="number" name="denom_a1">
+                        </td>
+                        <td id="percent-a1"></td>
+                    </tr>
+                    <tr>
+                        <td>Activity 2</td>
+                        <td>A2</td>
+                        <td class="weight-input">
+                            <input type="number" name="weight_a2" id="">
+                        </td>
+                        <!--TODO: Style so elems are in a row-->
+                        <td class="grade-input">
+                            <input type="number" name="num_a2">
+                            <p class="grade-slash">/</p>
+                            <input type="number" name="denom_a2">
+                        </td>
+                        <td id="percent-a2"></td>
+                    </tr>
+                    <tr>
+                        <td>Activity 3</td>
+                        <td>A3</td>
+                        <td class="weight-input">
+                            <input type="number" name="weight_a3" id="">
+                        </td>
+                        <!--TODO: Style so elems are in a row-->
+                        <td class="grade-input">
+                            <input type="number" name="num_a3">
+                            <p class="grade-slash">/</p>
+                            <input type="number" name="denom_a3">
+                        </td>
+                        <td id="percent-a3"></td>
+                    </tr>
+                    <tr>
+                        <td>Activity 4</td>
+                        <td>A4</td>
+                        <td class="weight-input">
+                            <input type="number" name="weight_a4" id="">
+                        </td>
+                        <!--TODO: Style so elems are in a row-->
+                        <td class="grade-input">
+                            <input type="number" name="num_a4">
+                            <p class="grade-slash">/</p>
+                            <input type="number" name="denom_a4">
                         </td>
                         <td id="percent-a1"></td>
                     </tr>
@@ -51,8 +93,8 @@
                 </div>
                 <!--Submit buttons-->
                 <div id="submit">
-                    <input class="red-btn" type="submit" value="WEIGHTED">
                     <input class="red-btn" type="submit" value="MEAN">
+                    <input class="red-btn" type="submit" value="WEIGHTED">
                 </div>
             </form>
         </section>
