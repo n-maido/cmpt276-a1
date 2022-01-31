@@ -1,3 +1,4 @@
+let activity_counter = 4; // use this to generate ids & activity numbers, starting with 4 activities as default
 //-----------Grade calculations-----------
 /**
  * Calculates the grade, rounded to 2 decimal places
@@ -82,7 +83,6 @@ function handleMean() {
 
     // calculate mean
     mean = (sum / grade_count).toFixed(2);
-    console.log("mean: " + mean);
 
     //display mean
     let result = document.getElementById("result");
@@ -90,5 +90,80 @@ function handleMean() {
 }
 
 let mean_button = document.getElementById("mean-btn");
-console.log(mean_button);
 mean_button.addEventListener('click', handleMean);
+
+// ------------ Weighted grades ---------------------
+/**
+ * Weighted grade = (sum of grades, each multiplied by their weights) / (sum of weights)
+ */
+function handleWeight() {
+    let num = 0.0; // numerator
+    let denom = 0.0; //denominator
+    let weighted_grade = 0.0;
+    let missing_grades = [];
+    let missing_weights = [];
+    let alert = false;
+    let alert_msg = "";
+
+    // extract grades and weights
+    let grade_results = document.getElementsByClassName("grade-result");
+    let grade_weights = document.getElementsByClassName("weight-input");
+    console.log(grade_weights);
+
+    for (let i = 0; i < grade_results.length; i++) {
+        let grade_id = grade_results[i].id
+        grade = document.getElementById(grade_results[i].id).innerHTML;
+        weight = grade_weights[i].querySelector("input[type=number]").value;
+
+        if (grade.length == 0 || grade == "0.00%") {
+            // add activity name to list of missing grades
+            missing_grades.push("Activity " + grade_id.charAt(grade_id.length - 1));
+
+        }
+        
+        if (weight.length === 0) {
+            // add activity to list of missing weights
+            missing_weights.push("Activity " + grade_id.charAt(grade_id.length - 1));
+        }
+
+        if (grade.length > 0 && weight.length > 0) {
+            let cur_grade = parseFloat(grade.substring(0, grade.length - 1));
+            let cur_weight = parseFloat(weight);
+            num += cur_grade * cur_weight;
+            denom += cur_weight;
+        }
+    }
+
+    // alert user of missing grades & weights
+    if (missing_grades.length > 0) {
+        alert = true;
+        alert_msg = "A grade is missing for: \n";
+        for (let i = 0; i < missing_grades.length; i++) {
+            alert_msg += missing_grades[i] + "\n";
+        }
+    }
+
+    if (missing_weights.length > 0) {
+        alert = true;
+        alert_msg += "\nA weight is missing for: \n";
+        for (let i = 0; i < missing_weights.length; i++) {
+            alert_msg += missing_weights[i] + "\n";
+        }
+    }
+
+    if (alert) {
+        window.alert(alert_msg);
+    }
+
+    // calculate weighted grades
+    weighted_grade = (num / denom).toFixed(2);
+    
+    //display weighted grade
+    let result = document.getElementById("result");
+    result.innerHTML = weighted_grade + "%";
+}
+
+let weight_button = document.getElementById("weight-btn");
+weight_button.addEventListener('click', handleWeight);
+
+// ------------------ Add activity -------------------------
