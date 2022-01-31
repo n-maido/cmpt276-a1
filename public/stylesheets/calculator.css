@@ -58,7 +58,8 @@ h4 {
 table {
   border-left: solid 1px var(--table-outline);
   border-bottom: solid 1px var(--table-outline);
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
+  border-spacing: 0;
 }
 
 th {
