@@ -18,7 +18,10 @@ function handleGradeRow(input) {
 
     // id's are named as such: "denom_a1, denom_a2" etc
     // extract the row number of the id
-    let input_id = input.path[0].id;
+    console.log(typeof (input));
+    console.log(input);
+    let input_id = input.srcElement.id;
+    
     let row_number = input_id.charAt(input_id.length - 1);
     console.log("row: " + row_number);
 
@@ -30,16 +33,18 @@ function handleGradeRow(input) {
     num_id = "num_a" + row_number;
     num = document.getElementById(num_id).value;
 
-    // calculate grade, only if we have both numerator and denominator
+    // display grade
+    let grade_id = "percent-a" + row_number;
+    let grade_display = document.getElementById(grade_id);
+
     if (num > -1 && denom > 0) {
         grade = calculateGrade(num, denom);
-    }
-
-    // display grade
-    if (grade > -1) {
-        let grade_id = "percent-a" + row_number;
-        let grade_display = document.getElementById(grade_id);
-        grade_display.innerHTML = grade + "%";
+        if (grade > -1) {
+            grade_display.innerHTML = grade + "%";
+        }
+    } else {
+        // clear the percent display
+        grade_display.innerHTML = "";
     }
 }
 
