@@ -18,12 +18,9 @@ function handleGradeRow(input) {
 
     // id's are named as such: "denom_a1, denom_a2" etc
     // extract the row number of the id
-    console.log(typeof (input));
-    console.log(input);
     let input_id = input.srcElement.id;
     
     let row_number = input_id.charAt(input_id.length - 1);
-    console.log("row: " + row_number);
 
     // extract denominator
     denom_id = "denom_a" + row_number; 
@@ -114,13 +111,11 @@ function handleWeight() {
     // extract grades and weights
     let grade_results = document.getElementsByClassName("grade-result");
     let grade_weights = document.getElementsByClassName("weight-input");
-    console.log(grade_weights);
 
     for (let i = 0; i < grade_results.length; i++) {
         let grade_id = grade_results[i].id
         grade = document.getElementById(grade_results[i].id).innerHTML;
         weight = grade_weights[i].querySelector("input[type=number]").value;
-        console.log("weight: " + weight);
 
         if (grade.length == 0 || grade == "0.00%") {
             // add activity name to list of missing grades

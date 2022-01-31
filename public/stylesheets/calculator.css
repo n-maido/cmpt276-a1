@@ -1,125 +1,124 @@
 :root {
-    --red-bg: #93262B;
-    --gray-div: #35322F;
-    --form-bg: #E6ECEF;
-    --table-header: #D8D8D8;
-    --table-outline: #B3B3B3;
-    --red-hg: #A6192E;
+  --red-bg: #93262b;
+  --gray-div: #35322f;
+  --form-bg: #e6ecef;
+  --table-header: #d8d8d8;
+  --table-outline: #b3b3b3;
+  --red-hg: #a6192e;
 }
 
 body {
-    background-color: var(--red-bg);
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    padding: 0;
+  background-color: var(--red-bg);
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 0;
 }
 
 main {
-    background-color: white;
-    width: 80em;
-    margin: 0;
-    box-shadow: #35322F;
+  background-color: white;
+  width: 80em;
+  margin: 0;
+  box-shadow: #35322f;
 }
 
 .gray-div {
-    background-color: var(--gray-div);
-    height: 2em;
-    margin: 0;
+  background-color: var(--gray-div);
+  height: 2em;
+  margin: 0;
 }
 
 .calculator {
-    padding: 1em;
+  padding: 1em;
 }
 
 h1 {
-    font-family: 'Lucida Grande', sans-serif, sans-serif;
-    font-weight: 500;
-    font-size: 28pt;
-    margin-top: 2em;
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: 500;
+  font-size: 28pt;
+  margin-top: 2em;
 }
 
 #instructions {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 form {
-    background-color: var(--form-bg);
-    padding: 0.75em;
-    width: 60em;
+  background-color: var(--form-bg);
+  padding: 0.75em;
+  width: 60em;
 }
 
 h4 {
-    color: var(--red-hg);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
+  color: var(--red-hg);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
 }
 
 table {
-    /* border: solid 1pt var(--table-outline); */
-    border-collapse: collapse;
+  /* border: solid 1pt var(--table-outline); */
+  border-collapse: collapse;
 }
 
 th {
-    background-color: var(--table-header);
+  background-color: var(--table-header);
 }
 
-td, th{
-    font-family: 'Times New Roman', Times, serif;
-    border: solid 1pt var(--table-outline);
-    border-collapse: collapse;
-    padding: 5px;
-    text-align: left;
-    width: 10em;
+td,
+th {
+  font-family: "Times New Roman", Times, serif;
+  border: solid 1pt var(--table-outline);
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: left;
+  width: 10em;
 }
 
-
-input[type=number] {
-    height: 2.5em;
-    width: 3.5em;
+input[type="number"] {
+  height: 2.5em;
+  width: 3.5em;
 }
 
-.grade-input{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    align-items: center;
-    border-width: 0 0 1pt 0;
+.grade-input {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-width: 0 0 1pt 0;
 }
-
 
 .grade-slash {
-    font-size: 24px;
-    margin: 0;
+  font-size: 24px;
+  margin: 0;
 }
 
 .red-btn {
-    background-color: var(--red-hg);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    height: 2.5em;
-    /* width: 8em; */
-    font-size: 12pt;
-    font-weight: 525;
+  background-color: var(--red-hg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 2.5em;
+  /* width: 8em; */
+  font-size: 12pt;
+  font-weight: 525;
 }
 
 input[value="ADD ACTIVITY"] {
-    width: 8em;
-    margin-top: 2em;
+  width: 8em;
+  margin-top: 2em;
 }
 
 input[value="WEIGHTED"] {
-    width: 7em;
-    margin-right: 0.25em;
+  width: 7em;
+  margin-right: 0.25em;
 }
 
 input[value="MEAN"] {
-    width: 6em;
+  width: 6em;
 }
 
 #submit {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
 }
