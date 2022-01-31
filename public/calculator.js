@@ -180,7 +180,7 @@ weight_button.addEventListener('click', handleWeight);
 function handleAdd() {
     activity_counter++;
     let table = document.getElementById("table");
-    let row = table.insertRow(-1);
+    let row = table.insertRow(-1); // append to end of table
 
     let name = row.insertCell(0);
     name.innerHTML = "Activity " + activity_counter;
