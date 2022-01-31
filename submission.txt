@@ -4,3 +4,4 @@ Cmpt 276 Assignment 1
 
 App link: https://cmpt276-a1-nhi.herokuapp.com/calculator.html
 Git link: https://github.com/n-maido/cmpt276-a1
+Heroku git link: https://git.heroku.com/cmpt276-a1-nhi.git
