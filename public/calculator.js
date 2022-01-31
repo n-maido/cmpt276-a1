@@ -20,6 +20,7 @@ function handleGradeRow(input) {
     // extract the row number of the id
     let input_id = input.path[0].id;
     let row_number = input_id.charAt(input_id.length - 1);
+    console.log("row: " + row_number);
 
     // extract denominator
     denom_id = "denom_a" + row_number; 
@@ -114,6 +115,7 @@ function handleWeight() {
         let grade_id = grade_results[i].id
         grade = document.getElementById(grade_results[i].id).innerHTML;
         weight = grade_weights[i].querySelector("input[type=number]").value;
+        console.log("weight: " + weight);
 
         if (grade.length == 0 || grade == "0.00%") {
             // add activity name to list of missing grades
@@ -167,3 +169,36 @@ let weight_button = document.getElementById("weight-btn");
 weight_button.addEventListener('click', handleWeight);
 
 // ------------------ Add activity -------------------------
+/**
+ * Adds a new activity to the table
+ */
+function handleAdd() {
+    activity_counter++;
+    let table = document.getElementById("table");
+    let row = table.insertRow(-1);
+
+    let name = row.insertCell(0);
+    name.innerHTML = "Activity " + activity_counter;
+
+    let short_name = row.insertCell(1);
+    short_name.innerHTML = "A" + activity_counter;
+
+    let weight = row.insertCell(2);
+    weight.classList.add("weight-input");
+    weight.innerHTML = "<input type=\"number\" id=\"weight_a" + activity_counter + "\" min=\"0\">"
+
+    let grade = row.insertCell(3);
+    grade.id = "grade-input-" + activity_counter
+    grade.classList.add("grade-input");
+    grade.innerHTML =   "<input type=\"number\" id=\"num_a" + activity_counter +  "\" min=\"0\">" + "\n" +
+                        "<p class=\"grade-slash\">/</p>" + "\n" +
+                        "<input type=\"number\" id=\"denom_a" + activity_counter + "\" min=\"0\">"
+    grade.addEventListener('input', handleGradeRow);
+    
+    let percent = row.insertCell(4);
+    percent.classList.add("grade-result");
+    percent.id = "percent-a" + activity_counter;
+}
+
+let add_button = document.getElementById("add-btn");
+add_button.addEventListener('click', handleAdd);

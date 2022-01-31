@@ -17,7 +17,7 @@
             <form action="./calculator.js" method="post">
                 <h4>Activities</h4>
                 <p id="instructions">Give grades to the numeric activities:</p>
-                <table>
+                <table id="table">
                     <!--Table headings-->
                     <tr>
                         <th>Name</th>
@@ -31,7 +31,7 @@
                         <td>Activity 1</td>
                         <td>A1</td>
                         <td class="weight-input">
-                            <input type="number" id="weight_a1" id="" min="0">
+                            <input type="number" id="weight_a1" min="0">
                         </td>
                         <td class="grade-input" id="grade-input-1">
                             <input type="number" id="num_a1" min="0">
@@ -82,7 +82,7 @@
                 </table>
                 <!--Add activity-->
                 <div id="add-activity">
-                    <input class="red-btn" type="button" value="ADD ACTIVITY">
+                    <input class="red-btn" type="button" value="ADD ACTIVITY" id="add-btn">
                 </div>
                 <!--Result-->
                 <div>
