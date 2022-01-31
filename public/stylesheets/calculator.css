@@ -56,7 +56,8 @@ h4 {
 }
 
 table {
-  /* border: solid 1pt var(--table-outline); */
+  border-left: solid 1px var(--table-outline);
+  border-bottom: solid 1px var(--table-outline);
   border-collapse: collapse;
 }
 
@@ -67,7 +68,8 @@ th {
 td,
 th {
   font-family: "Times New Roman", Times, serif;
-  border: solid 1pt var(--table-outline);
+  border-top: solid 1px var(--table-outline);
+  border-right: solid 1px var(--table-outline);
   border-collapse: collapse;
   padding: 5px;
   text-align: left;
@@ -84,7 +86,6 @@ input[type="number"] {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  border-width: 0 0 1pt 0;
 }
 
 .grade-slash {
