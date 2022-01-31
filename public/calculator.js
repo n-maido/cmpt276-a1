@@ -3,7 +3,7 @@
  * Calculates the grade, rounded to 2 decimal places
  */
 function calculateGrade(num, denom) {
-    return (num / denom).toFixed(4) * 100;
+    return ((num / denom) * 100).toFixed(2);
 }
 
 // Detect grade inputs
@@ -50,26 +50,43 @@ for (let i = 0; i < grade_inputs.length ; i++) {
 }
 
 // ------------- Mean grades ---------------
-function handleMean(input) {
+function handleMean() {
     let sum = 0.0;
-    let gradeCount = 0;
+    let grade_count = 0;
     let mean = 0.0;
+    let missing_grades = [];
     let grade_results = document.getElementsByClassName("grade-result");
 
     for (let i = 0; i < grade_results.length; i++) {
         grade = document.getElementById(grade_results[i].id).innerHTML;
 
-        if (grade.length == 0) {
-            console.log("no grade")
+        if (grade.length == 0 || grade == "0.00%") {
+            // add activity name to list of missing grades
+            let grade_id = grade_results[i].id
+            missing_grades.push("Activity " + grade_id.charAt(grade_id.length - 1));
+
         } else {
-            gradeCount++;
-            sum += parseFloat(grade.substring(0, grade.length - 1));
-            mean = (sum / gradeCount).toFixed(2);
-            console.log("mean: " + mean);
-            
+            grade_count++;
+            sum += parseFloat(grade.substring(0, grade.length - 1));   
         }
     }
 
+    // alert user of missing grades
+    if (missing_grades.length > 0) {
+        let alert_msg = "A grade is missing for: \n";
+        for (let i = 0; i < missing_grades.length; i++) {
+            alert_msg += missing_grades[i] + "\n";
+        }
+        window.alert(alert_msg);
+    }
+
+    // calculate mean
+    mean = (sum / grade_count).toFixed(2);
+    console.log("mean: " + mean);
+
+    //display mean
+    let result = document.getElementById("result");
+    result.innerHTML = mean + "%";
 }
 
 let mean_button = document.getElementById("mean-btn");
